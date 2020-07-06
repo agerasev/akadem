@@ -1,12 +1,9 @@
-CPP  = g++
-CC   = gcc
+CXX  = g++
 OBJ  = main.o
 LIBS = -lSDLmain -lSDL -lSDL_ttf -lGL -lGLU
-INCS = 
-CXXINCS = 
+INCS = -Isrc
 BIN  = akadem
-CXXFLAGS = $(CXXINCS)  
-CFLAGS = $(INCS)  
+FLAGS = $(INCS)  
 RM = rm -f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -18,8 +15,8 @@ clean: clean-custom
 	${RM} $(OBJ) $(BIN)
 
 $(BIN): $(OBJ)
-	$(CPP) $^ -o $@ $(LIBS)
+	$(CXX) $^ -o $@ $(LIBS)
 
-main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+main.o: src/main.cpp
+	$(CXX) -c $< -o $@ $(FLAGS)
 

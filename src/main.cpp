@@ -49,7 +49,7 @@ int main(int argc, char * argv[]){
  	
  	SDL_ShowCursor(0);
  	
- 	gl.init(800,600,0);
+ 	gl.init(1600,900,0);
  	
  	mtxt.setfont("fonts/segoeui.ttf",24);
  	mtxt.setcolor(0xff,0xff,0x00);
